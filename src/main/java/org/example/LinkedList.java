@@ -80,6 +80,8 @@ public class LinkedList implements DataStructure {
 
     @Override
     public void clear() {
-
+        this.size = 0;
+        this.first = null;
+        this.last = null;
     }
 }
