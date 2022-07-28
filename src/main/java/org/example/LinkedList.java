@@ -61,9 +61,7 @@ public class LinkedList implements DataStructure {
     }
 
     @Override
-    public int size() {
-        return size;
-    }
+    public int size() { return size; }
 
     @Override
     public String get(int index) {
