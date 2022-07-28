@@ -67,8 +67,16 @@ public class LinkedList implements DataStructure {
 
     @Override
     public String get(int index) {
-        return "";
+        if(index >=size || index < 0 ) return null;
+
+        Node node = first;
+        for(int i = 0; i<=size; i++){
+            if(i == index) break;
+            node = node.getNext();
+        }
+        return node.getElement();
     }
+
 
     @Override
     public void clear() {
