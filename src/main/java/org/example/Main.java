@@ -12,17 +12,24 @@ public class Main {
         System.out.println(linkedList.get(1));
         System.out.println(linkedList.get(2));
 //        System.out.println(linkedList.get(3));
-        System.out.println("size: " +linkedList.size());
+        System.out.println("size: " + linkedList.size());
 
         System.out.println("---------------");
-        linkedList.add(2,"D");
-//        System.out.println(linkedList.get(-1));
+        System.out.println("removed: " + linkedList.remove());
         System.out.println(linkedList.get(0));
         System.out.println(linkedList.get(1));
-        System.out.println(linkedList.get(2));
-        System.out.println(linkedList.get(3));
-//        System.out.println(linkedList.get(4));
+//        System.out.println(linkedList.get(2));
         System.out.println("size: " +linkedList.size());
+
+//        System.out.println("---------------");
+//        linkedList.add(2,"D");
+//        System.out.println(linkedList.get(-1));
+//        System.out.println(linkedList.get(0));
+//        System.out.println(linkedList.get(1));
+//        System.out.println(linkedList.get(2));
+//        System.out.println(linkedList.get(3));
+//        System.out.println(linkedList.get(4));
+//        System.out.println("size: " +linkedList.size());
 
 //        System.out.println("---------------");
 //        linkedList.addFirst("d");

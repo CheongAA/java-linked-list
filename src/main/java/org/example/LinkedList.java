@@ -63,7 +63,13 @@ public class LinkedList implements DataStructure {
 
     @Override
     public String remove() {
-        return null;
+        size --;
+        Node newLast = getNode(size - 1);
+        Node removedNode = newLast.getNext();
+        newLast.setNext(null);
+        last = newLast;
+
+        return removedNode.getElement();
     }
 
     @Override
@@ -86,14 +92,9 @@ public class LinkedList implements DataStructure {
 
     @Override
     public String get(int index) {
-        if(!checkIndexValid(index)){
+        Node node = getNode(index);
+        if(node == null) {
             throw new IndexOutOfBoundsException("index invalid");
-        }
-
-        Node node = first;
-        for(int i = 0; i<=size; i++){
-            if(i == index) break;
-            node = node.getNext();
         }
         return node.getElement();
     }
@@ -111,5 +112,18 @@ public class LinkedList implements DataStructure {
             return false;
         };
         return true;
+    }
+
+    private Node getNode(int index) {
+        if(!checkIndexValid(index)){
+            return null;
+        }
+
+        Node node = first;
+        for(int i = 0; i<=size; i++){
+            if(i == index) break;
+            node = node.getNext();
+        }
+        return node;
     }
 }
