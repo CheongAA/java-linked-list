@@ -27,12 +27,14 @@ public class LinkedList implements DataStructure {
 
     @Override
     public void add(int index, String element) {
-
     }
 
     @Override
     public void addFirst(String element) {
-
+        Node newNode =  new Node(element);
+        newNode.setNext(first);
+        first = newNode;
+        this.size ++;
     }
 
     @Override

@@ -15,6 +15,15 @@ public class Main {
         System.out.println("size: " +linkedList.size());
 
         System.out.println("---------------");
+        linkedList.addFirst("d");
+        System.out.println(linkedList.get(-1));
+        System.out.println(linkedList.get(0));
+        System.out.println(linkedList.get(1));
+        System.out.println(linkedList.get(2));
+        System.out.println(linkedList.get(3));
+        System.out.println("size: " +linkedList.size());
+
+        System.out.println("---------------");
         linkedList.clear();
         System.out.println(linkedList.get(0));
         System.out.println("size: " +linkedList.size());
