@@ -74,17 +74,21 @@ public class LinkedList implements DataStructure {
 
     @Override
     public boolean remove(String element) {
-        return false;
+        return true;
     }
 
     @Override
     public String removeFirst() {
-        return null;
+        size --;
+        Node newFirst = first.getNext();
+        Node removedNode = first;
+        first = newFirst;
+        return removedNode.getElement();
     }
 
     @Override
-    public String removeList() {
-        return null;
+    public String removeLast() {
+        return remove();
     }
 
     @Override

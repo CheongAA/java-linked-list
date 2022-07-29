@@ -23,7 +23,7 @@ public interface DataStructure {
     String removeFirst();
 
     //리스트의 가장 끝 항목을 추출 및 제거
-    String removeList();
+    String removeLast();
 
     //현재 리스트의 사이즈를 반환
     int size();

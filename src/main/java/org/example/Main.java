@@ -15,11 +15,16 @@ public class Main {
         System.out.println("size: " + linkedList.size());
 
         System.out.println("---------------");
-        System.out.println("removed: " + linkedList.remove());
+        System.out.println("removed: " + linkedList.removeFirst());
         System.out.println(linkedList.get(0));
         System.out.println(linkedList.get(1));
-//        System.out.println(linkedList.get(2));
         System.out.println("size: " +linkedList.size());
+
+//        System.out.println("---------------");
+//        System.out.println("removed: " + linkedList.remove());
+//        System.out.println(linkedList.get(0));
+//        System.out.println(linkedList.get(1));
+//        System.out.println("size: " +linkedList.size());
 
 //        System.out.println("---------------");
 //        linkedList.add(2,"D");
