@@ -14,19 +14,38 @@ public class LinkedList implements DataStructure {
     @Override
     public boolean add(String element) {
         Node newNode = new Node(element);
-        if(this.size == 0){
-            this.first = newNode;
-            this.last = newNode;
+        if(size == 0){
+            first = newNode;
         }else {
-            this.last.setNext(newNode);
-            this.last = newNode;
+            last.setNext(newNode);
         }
-        this.size ++;
+        last = newNode;
+        size ++;
         return true;
     }
 
     @Override
     public void add(int index, String element) {
+        if(!checkIndexValid(index)){
+            throw new IndexOutOfBoundsException("index invalid");
+        }
+
+        if (index == 0) {
+            addFirst(element);
+            return;
+        }
+
+        Node head = first;
+        for(int i = 0; i<size; i++){
+            if(i  == index - 1) {
+                Node newNode =  new Node(element);
+                newNode.setNext(head.getNext());
+                head.setNext(newNode);
+                size ++;
+                return;
+            };
+            head = head.getNext();
+        }
     }
 
     @Override
@@ -34,12 +53,12 @@ public class LinkedList implements DataStructure {
         Node newNode =  new Node(element);
         newNode.setNext(first);
         first = newNode;
-        this.size ++;
+        size ++;
     }
 
     @Override
     public void addLast(String element) {
-
+        add(element);
     }
 
     @Override
@@ -67,7 +86,9 @@ public class LinkedList implements DataStructure {
 
     @Override
     public String get(int index) {
-        if(index >=size || index < 0 ) return null;
+        if(!checkIndexValid(index)){
+            throw new IndexOutOfBoundsException("index invalid");
+        }
 
         Node node = first;
         for(int i = 0; i<=size; i++){
@@ -83,5 +104,12 @@ public class LinkedList implements DataStructure {
         this.size = 0;
         this.first = null;
         this.last = null;
+    }
+
+    private boolean checkIndexValid(int index) {
+        if(index >= size || index < 0 ) {
+            return false;
+        };
+        return true;
     }
 }
