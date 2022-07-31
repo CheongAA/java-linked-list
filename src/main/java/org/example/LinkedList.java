@@ -74,7 +74,22 @@ public class LinkedList implements DataStructure {
 
     @Override
     public boolean remove(String element) {
-        return true;
+        Node head = first;
+        Node prevHead = null;
+        for(int i = 0; i<=size; i++){
+            if(head.getElement().equals(element)) {
+                if(prevHead == null) {
+                    first = head.getNext();
+                }else {
+                    prevHead.setNext(head.getNext());
+                }
+                size --;
+                return true;
+            };
+            prevHead = head;
+            head = head.getNext();
+        }
+        return false;
     }
 
     @Override
@@ -123,11 +138,11 @@ public class LinkedList implements DataStructure {
             return null;
         }
 
-        Node node = first;
+        Node head = first;
         for(int i = 0; i<=size; i++){
             if(i == index) break;
-            node = node.getNext();
+            head = head.getNext();
         }
-        return node;
+        return head;
     }
 }
